@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "477547965441",
+    "project_id": "videoplay-3c1b2",
+    "storage_bucket": "videoplay-3c1b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:477547965441:android:055d882c56b1cb86472400",
+        "android_client_info": {
+          "package_name": "com.example.videoplay"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBG2wgjG0T3KKEGubGmlmWfLRT88uchtyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
