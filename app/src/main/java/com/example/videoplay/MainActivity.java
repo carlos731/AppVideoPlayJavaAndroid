@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.videoplay.activity.VideoPlayerActivity;
+import com.example.videoplay.activity.VideoPlayerCustom;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.appbar.MaterialToolbar;
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnVideo.setOnClickListener(view -> {
             startActivity(new Intent(this, VideoPlayerActivity.class));
+            //startActivity(new Intent(this, VideoPlayerCustom.class));
         });
 
     }
