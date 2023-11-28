@@ -31,9 +31,10 @@ public class VideoPlayerCustom extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // https://github.com/waleedtalha/VideoPlayer
+
         // Sumir com a StatusBar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
 
         setContentView(R.layout.activity_video_player_custom);
 
