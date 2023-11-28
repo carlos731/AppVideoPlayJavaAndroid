@@ -4,13 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.videoplay.R;
+import com.google.android.exoplayer2.C;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
+import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
 import com.google.android.exoplayer2.ui.PlayerView;
 import com.google.android.exoplayer2.upstream.DataSource;
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory;
@@ -19,6 +24,8 @@ public class VideoPlayerCustom extends AppCompatActivity {
 
     private SimpleExoPlayer player;
     private PlayerView playerView;
+
+    private ImageView scaling;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +56,7 @@ public class VideoPlayerCustom extends AppCompatActivity {
         player.setPlayWhenReady(true); // Iniciar a reprodução automaticamente
 
         findViewById(R.id.video_back).setOnClickListener(click -> finish());
+
     }
 
     private MediaSource buildMediaSource(Uri uri) {
@@ -56,16 +64,34 @@ public class VideoPlayerCustom extends AppCompatActivity {
         return new ProgressiveMediaSource.Factory(dataSourceFactory).createMediaSource(MediaItem.fromUri(uri));
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        releasePlayer();
-    }
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        releasePlayer();
+//    }
 
     private void releasePlayer() {
         if (player != null) {
             player.release();
             player = null;
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Pausar o reprodutor de vídeo
+        if (player != null) {
+            player.setPlayWhenReady(false);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Retomar a reprodução do vídeo, se necessário
+        if (player != null) {
+            player.setPlayWhenReady(true);
         }
     }
 

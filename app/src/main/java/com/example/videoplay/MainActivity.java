@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnVideo.setOnClickListener(view -> {
-            startActivity(new Intent(this, VideoPlayerActivity.class));
-            //startActivity(new Intent(this, VideoPlayerCustom.class));
+            //startActivity(new Intent(this, VideoPlayerActivity.class));
+            startActivity(new Intent(this, VideoPlayerCustom.class));
         });
 
     }
